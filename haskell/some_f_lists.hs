@@ -39,3 +39,33 @@ n_divisiveis a b
 primeiro_primo :: [Int] -> Int
 primeiro_primo (x:xs) | eh_primo x = x
         | otherwise = primeiro_primo xs
+        
+        
+        
+ {-
+##GOSTARIA DE FILTRAR A POSIÇÃO DOS GANHADORES DA PARTIDA## 
+ data Gesto = Pedra | Papel | Tesoura
+              deriving (Show, Enum, Eq, Ord)
+              
+ganhadores :: [(Gesto, Gesto)] -> [Int]
+ganhadores js ps = map snd
+             
+
+    $ filter (\(j ,i) -> ganhador j js) 
+    $ filter (\(p ,m) -> ganhador p ps) 
+    $ zip i m[0..]
+
+
+
+ganhador :: Gesto -> [Gesto] -> Bool
+ganhador j js = all (j `ganhaDe`) js
+ganhador p ps = all (p `ganhaDe`) ps
+
+
+ganhaDe :: Gesto -> Gesto -> Bool
+Pedra   `ganhaDe` Tesoura = True
+Papel   `ganhaDe` Pedra   = True
+Tesoura `ganhaDe` Papel   = True
+g1      `ganhaDe` g2      | g1 == g2  = False
+                          | otherwise = False
+-}
